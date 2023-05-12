@@ -1,5 +1,7 @@
 .home {
-    background-color: red;
-    color: aliceblue;
-    font-weight: 700;
+  display: flex;
+
+  .home-container {
+    flex: 6;
+  }
 }
