@@ -1,0 +1,52 @@
+.navbar {
+   height: 4em; 
+   border-bottom: 0.06em solid rgb(232, 232, 232);
+   display: flex;
+   align-items: center;
+   font-size: 1rem;
+   color: #555;
+
+   .navbar-wrapper {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search {
+        display: flex;
+        align-items: center;
+        border: 0.03em solid lightgrey;
+        padding: 0.1em;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+
+    }
+
+    .items {
+        display: flex;
+        align-items: center;
+
+        .item {
+            margin: 0.5em;
+            display: flex;
+            align-items: center;
+
+            .icon {
+                font-size: 1.5em;
+                cursor: pointer;
+            }
+
+            .avatar {
+                width: 2em;
+                height: 2em;
+                border-radius: 50%;
+            }
+        }
+    }
+   }
+}
