@@ -32,19 +32,36 @@
         align-items: center;
 
         .item {
-            margin: 0.5em;
+            margin-right: 1.2em;
             display: flex;
             align-items: center;
+            position: relative;
 
             .icon {
                 font-size: 1.5em;
-                cursor: pointer;
             }
 
             .avatar {
                 width: 2em;
                 height: 2em;
                 border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .counter {
+                width: 1em;
+                height: 1em;
+                background-color: red;
+                border-radius: 50%;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9em;
+                font-weight: bold;
+                position: absolute;
+                top: -5px;
+                right: -5px;
             }
         }
     }

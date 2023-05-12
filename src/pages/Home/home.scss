@@ -4,5 +4,9 @@
   .home-container {
     width: 100%;
     
+    .widget-container{
+      display: flex;
+      padding: 1.5em;
+    }
   }
 }
