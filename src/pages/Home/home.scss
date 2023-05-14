@@ -1,12 +1,21 @@
+
 .home {
   display: flex;
 
-  .home-container {
-    width: 100%;
-    
-    .widget-container{
+  .home-container{
+    flex: 6;
+
+    .widget-container,
+    .charts {
       display: flex;
       padding: 1.5em;
+      gap: 1em;
     }
+
+    .charts {
+      padding: 0.5em 2em;
+    }
+
   }
+
 }
