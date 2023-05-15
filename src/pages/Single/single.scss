@@ -1,0 +1,38 @@
+.single {
+    display: flex;
+    width: 100%;
+
+    .single-container {
+        flex: 6;
+
+        .top {
+            padding: 1em;
+            display: flex;
+            gap: 1em;
+
+            .left {
+                flex: 1;
+                -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+                box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+                padding: 1em;
+                position: relative;
+
+                .edit-btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 1em;
+                    font-size: 0.9rem;
+                    color: #7451f8;
+                    background-color: #7551f818;
+                    cursor: pointer;
+                    border-radius: 0px 0px 0px 5px;
+                }
+            }
+
+            .right {
+                flex: 2;
+            }
+        }
+    }
+}
