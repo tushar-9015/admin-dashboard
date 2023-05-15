@@ -1,6 +1,7 @@
 
 .home {
   display: flex;
+  padding-bottom: 1em ;
 
   .home-container{
     flex: 6;
@@ -14,6 +15,19 @@
 
     .charts {
       padding: 0.5em 2em;
+    }
+
+    .list {
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+      padding: 1em;
+      margin: 1em;
+
+      .list-title {
+        font-weight: 500;
+        margin-bottom: 1em;
+        color: gray;
+      }
     }
 
   }
