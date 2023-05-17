@@ -36,7 +36,7 @@ import {
               </linearGradient>
             </defs>
             <XAxis dataKey="name" stroke="gray" />
-            <CartesianGrid strokeDasharray="3 3" className="chartGrid" />
+            <CartesianGrid strokeDasharray="3 3" className="chart-grid" />
             <Tooltip />
             <Area
               type="monotone"

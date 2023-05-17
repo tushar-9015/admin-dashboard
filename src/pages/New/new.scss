@@ -36,14 +36,18 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1em;
+            display: flex;
+               justify-content: space-around;
 
             .form-input {
                width: 40%;
+               
 
                label {
                   display: flex;
                   align-items: center;
                   gap: 1em;
+                  
 
                   .icon {
                      cursor: pointer;
