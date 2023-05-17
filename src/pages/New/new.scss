@@ -1,8 +1,75 @@
 .new {
    display: flex; 
-//    width: 100%;
+//     
 
    .new-container {
     flex: 6;
+
+    .top, .bottom {
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+      padding: 1em;
+      margin: 1.5em;
+      display: flex;
+
+      .title {
+         color: lightgray;
+         font-size: 1.5rem;
+      }
+
+      .left {
+         flex: 1;
+         text-align: center;
+
+         img {
+            width: 7em;
+            height: 7em;
+            border-radius: 50%;   
+            object-fit: cover;
+         }
+      }
+
+      .right {
+         flex: 2;
+
+         form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+
+            .form-input {
+               width: 40%;
+
+               label {
+                  display: flex;
+                  align-items: center;
+                  gap: 1em;
+
+                  .icon {
+                     cursor: pointer;
+                  }
+               }
+
+               input {
+                  width: 100%;
+                  padding: 0.4em;
+                  border: none;
+                  border-bottom: 0.06em solid rgb(211, 211, 211);
+               }
+            }
+
+            button {
+               width: 10em;
+               padding: 1em;
+               border: none;
+               background-color: rgb(140, 78, 162);
+               color: white;
+               font-weight: bold;
+               cursor: pointer;
+               margin-top: 1em;
+            }
+         }
+      }
+    }
    }
 }
