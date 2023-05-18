@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.scss'
 
 const Login = () => {
+  const [error, setError] = useState(false)
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+  }
   return (
     <div className='login'>
-      login
+      <form onSubmit={handleLogin}>
+        <input type='email' placeholder='email' />
+        <input type='password' placeholder='password' />
+        <button type='submit'>Login</button>
+        {error && <span>Wrong email or password!</span>}
+      </form>
     </div>
   )
 }
