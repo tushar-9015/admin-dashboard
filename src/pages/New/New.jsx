@@ -22,9 +22,13 @@ const New = ({ inputs, title }) => {
   console.log(data);
 
   const handleAdd = async (e) => {
-    e.prevent.Default();
+    console.log(auth, data.email, data.password);
+    e.preventDefault();
+    e.stopPropagation()
     try {
+   
       const res = await createUserWithEmailAndPassword(auth, data.email, data.password);
+      console.log(res);
       await setDoc(doc(db, "users", res.user.uid), {
        ...data,
        timeStamp: serverTimestamp(),
@@ -52,7 +56,7 @@ const New = ({ inputs, title }) => {
               : 'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'} alt=''  />
           </div>
           <div className="right">
-            <form onSubmit={handleAdd}>
+            <form onSubmit={(e) => handleAdd(e)}>
             <div className='form-input'>
                 <label htmlFor='file'>Image: <DriveFolderUploadOutlinedIcon className='icon' /></label>
                 <input id='file' type='file' onChange={(e) => setFile(e.target.files[0])} style={{display:"none"}} />
@@ -64,6 +68,7 @@ const New = ({ inputs, title }) => {
                 </div>
               ))}
               <button type="submit">Send</button>
+              
             </form>
           </div>
         </div>
