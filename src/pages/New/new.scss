@@ -13,7 +13,7 @@
       display: flex;
 
       .title {
-         color: lightgray;
+         color: rgb(216, 216, 216);
          font-size: 1.5rem;
       }
 
@@ -71,6 +71,11 @@
                font-weight: bold;
                cursor: pointer;
                margin-top: 1em;
+
+               &:disabled{
+                  background-color: rgb(93, 36, 113);
+                  cursor: not-allowed;
+               }
             }
          }
       }
