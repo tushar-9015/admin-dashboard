@@ -1,7 +1,8 @@
 import React, { useContext } from "react"
 import Home from "./pages/Home/Home"
 import Login from "./pages/Login/Login";
-import List from "./pages/List/List";
+import UserList from "./pages/List/UserList";
+import ProductList from "./pages/List/ProductList";
 import Single from "./pages/Single/Single";
 import New from "./pages/New/New";
 import {
@@ -37,12 +38,12 @@ function App() {
         <Route path="login" element={<Login />} /> 
         <Route index element={<RequireAuth><Home /></RequireAuth>} /> 
         <Route path="users">
-          <Route index element={<RequireAuth><List /></RequireAuth>} />
+          <Route index element={<RequireAuth><UserList /></RequireAuth>} />
           <Route path=":userId" element={<RequireAuth><Single/></RequireAuth>} />
           <Route path="new" element={<RequireAuth><New inputs = {userInputs} title="Add New User"/></RequireAuth>} />
           </Route>     
           <Route path="products">
-          <Route index element={<RequireAuth><List /></RequireAuth>} />
+          <Route index element={<RequireAuth><ProductList /></RequireAuth>} />
           <Route path=":productId" element={<RequireAuth><Single/></RequireAuth>} />
           <Route path="new" element={<RequireAuth><New inputs = {productInputs} title="Add New Product"/></RequireAuth>} />
           </Route>                

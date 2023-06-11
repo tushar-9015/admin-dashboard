@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import "./datatable.scss"
-import { userColumns } from '../../datatableSource';
+import { productColumns } from '../../datatableSource';
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from 'react-router-dom';
 import { collection, deleteDoc, doc, onSnapshot } from 'firebase/firestore';
@@ -8,12 +8,12 @@ import { db } from '../../firebase';
 
 
 
-const Datatable = () => {
+const ProductDatatable = () => {
   const [data, setData] = useState([]);
 
   useEffect(()=>{
     const unsub = onSnapshot(
-      collection(db, "users"),
+      collection(db, "products"),
       (snapShot) => {
         let list = [];
         snapShot.docs.forEach((doc) => {
@@ -34,7 +34,7 @@ const Datatable = () => {
 
   const handleDelete = async(id) => {
     try {
-      await deleteDoc(doc(db, "users", id));
+      await deleteDoc(doc(db, "products", id));
       setData(data.filter((item) => item.id !== id));
     } catch (error) {
       console.log(error);
@@ -50,9 +50,6 @@ const Datatable = () => {
       renderCell: (params) => {
         return (
           <div className="cell-action">
-            <Link to="/users/test" style={{ textDecoration: "none" }}>
-              <div className="view-btn">View</div>
-            </Link>
             <div
               className="del-btn"
               onClick={() => handleDelete(params.row.id)}
@@ -75,7 +72,7 @@ const Datatable = () => {
       <DataGrid
         className="data-grid"
         rows={data}
-        columns={userColumns.concat(actionColumn)}
+        columns={productColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
@@ -84,4 +81,4 @@ const Datatable = () => {
   );
 };
 
-export default Datatable;
+export default ProductDatatable;

@@ -4,8 +4,6 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import Navbar from '../../components/Navbar/Navbar';
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import {
-  addDoc,
-  collection,
   doc,
   serverTimestamp,
   setDoc,

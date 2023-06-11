@@ -28,32 +28,32 @@ export const userColumns = [
 ];
 
 
-// export const productColumns = [
-//   { field: "id", headerName: "ID", width: 70 },
-//   {
-//     field: "product",
-//     headerName: "Product",
-//     width: 230,
-//     renderCell: (params) => {
-//       return (
-//         <div className="cell-with-img">
-//           <img className="cell-img" src={params.row.img} alt="avatar" />
-//           {params.row.productname}
-//         </div>
-//       );
-//     },
-//   }, {
-//       field: "brand",
-//       headerName: "Brand",
-//       width: 230,
-//   }, {
-//       field: "amount",
-//       headerName: "Amount",
-//       width: 260,
-//   }, {
-//       field: "category",
-//       headerName: "Category",
-//       width: 160,
-//   }
-// ];
+export const productColumns = [
+  { field: "id", headerName: "ID", width: 70 },
+  {
+    field: "product",
+    headerName: "Product",
+    width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cell-with-img">
+          <img className="cell-img" src={params.row.img} alt="avatar" />
+          {params.row.productname}
+        </div>
+      );
+    },
+  }, {
+      field: "brand",
+      headerName: "Brand",
+      width: 230,
+  }, {
+      field: "price",
+      headerName: "Price",
+      width: 260,
+  }, {
+      field: "category",
+      headerName: "Category",
+      width: 160,
+  }
+];
 
