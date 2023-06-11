@@ -20,6 +20,7 @@ const New = ({ inputs, title }) => {
   const [data, setData] = useState({});
   const [perc, setPerc] = useState(null);
   const navigate = useNavigate()
+  console.log(title, inputs);
 
   useEffect(() => {
     const uploadFile = () => {

@@ -4,6 +4,7 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import Navbar from '../../components/Navbar/Navbar';
 import Chart from "../../components/chart/Chart";
 import List from "../../components/table/Table";
+import { db } from '../../firebase';
 
 const Single = () => {
   return (

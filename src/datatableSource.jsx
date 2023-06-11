@@ -21,16 +21,39 @@ export const userColumns = [
         headerName: "Address",
         width: 260,
     }, {
-        field: "staus",
-        headerName: "Status",
+        field: "country",
+        headerName: "Country",
         width: 160,
-        renderCell: (params) => {
-            return (
-              <div className={`cell-with-status ${params.row.status}`}>
-                {params.row.status}
-              </div>
-            )
-        }
     }
 ];
+
+
+// export const productColumns = [
+//   { field: "id", headerName: "ID", width: 70 },
+//   {
+//     field: "product",
+//     headerName: "Product",
+//     width: 230,
+//     renderCell: (params) => {
+//       return (
+//         <div className="cell-with-img">
+//           <img className="cell-img" src={params.row.img} alt="avatar" />
+//           {params.row.productname}
+//         </div>
+//       );
+//     },
+//   }, {
+//       field: "brand",
+//       headerName: "Brand",
+//       width: 230,
+//   }, {
+//       field: "amount",
+//       headerName: "Amount",
+//       width: 260,
+//   }, {
+//       field: "category",
+//       headerName: "Category",
+//       width: 160,
+//   }
+// ];
 
