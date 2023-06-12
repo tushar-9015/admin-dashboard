@@ -4,7 +4,8 @@ import Login from "./pages/Login/Login";
 import UserList from "./pages/List/UserList";
 import ProductList from "./pages/List/ProductList";
 import Single from "./pages/Single/Single";
-import New from "./pages/New/New";
+import NewProduct from "./pages/New/NewProduct";
+import NewUser from "./pages/New/NewUser";
 import {
   BrowserRouter,
   Routes,
@@ -40,12 +41,12 @@ function App() {
         <Route path="users">
           <Route index element={<RequireAuth><UserList /></RequireAuth>} />
           <Route path=":userId" element={<RequireAuth><Single/></RequireAuth>} />
-          <Route path="new" element={<RequireAuth><New inputs = {userInputs} title="Add New User"/></RequireAuth>} />
+          <Route path="new" element={<RequireAuth><NewUser inputs = {userInputs} title="Add New User"/></RequireAuth>} />
           </Route>     
           <Route path="products">
           <Route index element={<RequireAuth><ProductList /></RequireAuth>} />
           <Route path=":productId" element={<RequireAuth><Single/></RequireAuth>} />
-          <Route path="new" element={<RequireAuth><New inputs = {productInputs} title="Add New Product"/></RequireAuth>} />
+          <Route path="new" element={<RequireAuth><NewProduct inputs = {productInputs} title="Add New Product"/></RequireAuth>} />
           </Route>                
       </Route>                     
      </Routes>

@@ -48,7 +48,7 @@ export const productColumns = [
       width: 230,
   }, {
       field: "price",
-      headerName: "Price",
+      headerName: "Price(₹)",
       width: 260,
   }, {
       field: "category",

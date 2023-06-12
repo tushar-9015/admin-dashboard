@@ -4,20 +4,22 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import Navbar from '../../components/Navbar/Navbar';
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import {
+    collection,
+    addDoc,
   doc,
   serverTimestamp,
   setDoc,
 } from "firebase/firestore";
-import { auth, db, storage } from "../../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { db, storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
-const New = ({ inputs, title }) => {
+const NewProduct = ({ inputs, title }) => {
   const [file, setFile] = useState("");
   const [data, setData] = useState({});
   const [perc, setPerc] = useState(null);
   const navigate = useNavigate()
+  const collectionRef = collection(db, "products");
   console.log(title, inputs);
 
   useEffect(() => {
@@ -61,22 +63,17 @@ const New = ({ inputs, title }) => {
 
   console.log(data);
 
-  const handleInput = (e) => {
+  const productInput = (e) => {
     const id = e.target.id;
     const value = e.target.value;
 
     setData({ ...data, [id]: value });
   };
 
-  const handleAdd = async (e) => {
+  const productAdd = async (e) => {
     e.preventDefault();
     try {
-      const res = await createUserWithEmailAndPassword(
-        auth,
-        data.email,
-        data.password
-      );
-      await setDoc(doc(db, "users", res.user.uid), {
+  await addDoc(collectionRef, {
         ...data,
         timeStamp: serverTimestamp(),
       });
@@ -106,7 +103,7 @@ const New = ({ inputs, title }) => {
             />
           </div>
           <div className="right">
-            <form onSubmit={handleAdd}>
+            <form onSubmit={productAdd}>
               <div className="form-input">
                 <label htmlFor="file">
                   Image: <DriveFolderUploadOutlinedIcon className="icon" />
@@ -126,7 +123,7 @@ const New = ({ inputs, title }) => {
                     id={input.id}
                     type={input.type}
                     placeholder={input.placeholder}
-                    onChange={handleInput}
+                    onChange={productInput}
                   />
                 </div>
               ))}
@@ -139,6 +136,7 @@ const New = ({ inputs, title }) => {
       </div>
     </div>
   );
-};
 
-export default New;
+}
+
+export default NewProduct
