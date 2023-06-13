@@ -2,21 +2,15 @@ import React, { useContext } from 'react'
 import './sidebar.scss'
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
 import StoreIcon from "@mui/icons-material/Store";
-import InsertChartIcon from "@mui/icons-material/InsertChart";
-import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
-import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import {Link} from "react-router-dom"
 import { DarkModeContext } from '../../context/darkModeContext/darkModeContext';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 const Sidebar = () => {
     const { dispatch } = useContext(DarkModeContext)
+    const {authDispatch} = useContext(AuthContext)
   return (
     <div className='sidebar'>
         <div className='top'>
@@ -47,14 +41,9 @@ const Sidebar = () => {
                 <span>Products</span>
             </li>
             </Link>
-            <p className='title'>USEFUL</p>
-            <li>
-            <InsertChartIcon className="icon" />
-                <span>Stats</span>
-            </li>
             <li>
             <ExitToAppIcon className="icon" />
-                <span >Log Out</span>
+                <span onClick={() => authDispatch({type: 'LOGOUT'})} >Log Out</span>
             </li>
             </ul>
         </div>

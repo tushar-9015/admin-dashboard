@@ -10,6 +10,16 @@ import { db } from '../../firebase';
 
 const UserDatatable = () => {
   const [data, setData] = useState([]);
+  const [pageCount, setPageCount] = useState(1)
+  const [columnWidths, setColumnWidths] = useState({});
+
+
+  const handleColumnWidthChange = (columnId, newWidth) => {
+    setColumnWidths(prevWidths => ({
+      ...prevWidths,
+      [columnId]: newWidth,
+    }));
+  };
 
   useEffect(()=>{
     const unsub = onSnapshot(
@@ -20,6 +30,7 @@ const UserDatatable = () => {
           list.push({ id: doc.id, ...doc.data() });
         });
         setData(list);
+
       },
       (error) => {
         console.log(error);
@@ -75,10 +86,11 @@ const UserDatatable = () => {
       <DataGrid
         className="data-grid"
         rows={data}
-        columns={userColumns.concat(actionColumn)}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
-        checkboxSelection
+        columns={userColumns(columnWidths).concat(actionColumn)}
+        pageSize={5}
+        rowsPerPageOptions={[8]}
+        onColumnWidthChange={handleColumnWidthChange}
+        resizeable
       />
     </div>
   );

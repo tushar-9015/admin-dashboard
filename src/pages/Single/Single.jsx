@@ -2,8 +2,8 @@ import React from 'react'
 import './single.scss'
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Navbar from '../../components/Navbar/Navbar';
-import Chart from "../../components/chart/Chart";
-import List from "../../components/table/Table";
+import Chart from '../../components/Chart/Chart';
+import List from '../../components/Table/Table';
 import { db } from '../../firebase';
 
 const Single = () => {
